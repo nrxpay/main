@@ -1,0 +1,238 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scrollbar hiding utility */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Opera */
+  }
+}
+
+/* NRX PAY Design System - Mobile-First Crypto Exchange */
+
+@layer base {
+  :root {
+    /* Core Colors - Light Mode */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    /* Brand Colors - Enhanced for mobile */
+    --brand-primary: 260 100% 65%;
+    --brand-secondary: 200 100% 55%;
+    --brand-accent: 45 100% 65%;
+    
+    /* Neon Highlights - Better mobile rendering */
+    --neon-purple: 260 100% 65%;
+    --neon-cyan: 200 100% 55%;
+    --neon-yellow: 45 100% 65%;
+    --neon-gradient: linear-gradient(135deg, hsl(260 100% 65%), hsl(200 100% 55%));
+    
+    /* Enhanced gradients for mobile */
+    --gradient-primary: linear-gradient(135deg, hsl(260 100% 65%) 0%, hsl(200 100% 55%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(200 100% 55%) 0%, hsl(260 100% 65%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(158 64% 52%) 100%);
+    --gradient-warning: linear-gradient(135deg, hsl(45 100% 65%) 0%, hsl(25 95% 53%) 100%);
+    
+    /* UI Elements */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: var(--brand-primary);
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: var(--brand-primary);
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  /* Enhanced Gradient Utilities for Mobile */
+  .neon-gradient {
+    background: var(--gradient-primary);
+  }
+  
+  .neon-text {
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+  
+  .gradient-warning {
+    background: var(--gradient-warning);
+  }
+  
+  /* Card Variants */
+  .card-neon {
+    background: linear-gradient(135deg, hsl(var(--brand-primary)) 0%, hsl(var(--brand-secondary)) 100%);
+    border-radius: var(--radius);
+    box-shadow: var(--card-shadow);
+  }
+  
+  .card-rate {
+    background: hsl(220 13% 18%);
+    border-radius: 1.5rem;
+    color: white;
+  }
+  
+  /* Button Variants */
+  .btn-neon {
+    background: var(--neon-gradient);
+    border-radius: 1.5rem;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-neon:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 69, 255, 0.3);
+  }
+  
+  .btn-outline-neon {
+    border: 2px solid hsl(var(--brand-primary));
+    color: hsl(var(--brand-primary));
+    border-radius: 1rem;
+    background: transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-outline-neon:hover {
+    background: hsl(var(--brand-primary));
+    color: white;
+  }
+  
+  /* Animations */
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 10px hsl(var(--brand-primary) / 0.5);
+    }
+    to {
+      box-shadow: 0 0 20px hsl(var(--brand-primary) / 0.8), 0 0 30px hsl(var(--brand-primary) / 0.6);
+    }
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  .animate-marquee {
+    animation: marquee 15s linear infinite;
+  }
+}
